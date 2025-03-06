@@ -1,0 +1,17 @@
+public static void SpeedBoost()
+        {
+            float jspt = jspeed;
+            float jmpt = jmulti;
+            if (GetIndex("Factored Speed Boost").enabled)
+            {
+                jspt = (jspt / 6.5f) * GorillaLocomotion.Player.Instance.maxJumpSpeed;
+                jmpt = (jmpt / 10.1f) * GorillaLocomotion.Player.Instance.jumpMultiplier;
+            }
+            if (!GetIndex("Disable Max Speed Modification").enabled)
+            {
+                GorillaLocomotion.Player.Instance.maxJumpSpeed = jspeed;
+            }
+            GorillaLocomotion.Player.Instance.jumpMultiplier = jmulti;
+        }
+
+       
