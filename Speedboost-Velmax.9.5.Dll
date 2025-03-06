@@ -1,0 +1,10 @@
+```c#
+if (EasyInputs.GetTriggerButtonDown(EasyHand.LeftHand))
+{
+GorillaLocomotion.Player.Instance.transform.ExtraVelmaxMultiplier += new Vector3(9.15f, 9.25f, 9.25f);
+}
+if (EasyInputs.GetGripButtonDown(EasyHand.RightHand))
+{
+GorillaLocomotion.Player.Instance.transform.ExtraVelmaxMultiplier -= new Vector3(9.15f, 9.25f, 9.25f);
+}
+```
