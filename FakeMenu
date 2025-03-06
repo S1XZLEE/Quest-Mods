@@ -1,0 +1,13 @@
+ public static void FakeOculusMenu() // I swear I thought the oculus menu had their arms crossed
+        {
+            if (leftPrimary)
+            {
+                Safety.NoFinger();
+                GorillaLocomotion.Player.Instance.inOverlay = true;
+                GorillaLocomotion.Player.Instance.leftControllerTransform.localPosition = new Vector3(238f, -90f, 0f);
+                GorillaLocomotion.Player.Instance.rightControllerTransform.localPosition = new Vector3(-190f, 90f, 0f);
+                GorillaLocomotion.Player.Instance.leftControllerTransform.rotation = Camera.main.transform.rotation * Quaternion.Euler(-55f, 90f, 0f);
+                GorillaLocomotion.Player.Instance.rightControllerTransform.rotation = Camera.main.transform.rotation * Quaternion.Euler(-55f, -49f, 0f);
+            }
+           
+        }
