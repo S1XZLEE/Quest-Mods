@@ -1,1 +1,10 @@
-
+```c#
+if (EasyInputs.GetTriggerButtonDown(EasyHand.RightHand))
+{
+GorillaLocomotion.Player.Instance.transform.localScale += new Vector3(1.15f, 1.25f, 1.25f);
+}
+if (EasyInputs.GetGripButtonDown(EasyHand.RightHand))
+{
+GorillaLocomotion.Player.Instance.transform.localScale -= new Vector3(1.15f, 1.25f, 1.25f);
+}
+```
