@@ -1,0 +1,23 @@
+  /*
+        public static void DisableSpeedBoost()
+        {
+            GorillaLocomotion.Player.Instance.maxJumpSpeed = 1.0f;
+            GorillaLocomotion.Player.Instance.jumpMultiplier = 1.0f;
+        }*/
+
+        public static void UncapMaxVelocity()
+        {
+            GorillaLocomotion.Player.Instance.maxJumpSpeed = 99999f;
+        }
+
+        public static void AlwaysMaxVelocity()
+        {
+            if (GetIndex("Uncap Max Velocity").enabled)
+            {
+                Toggle("Uncap Max Velocity");
+            }
+            else
+            {
+                GorillaLocomotion.Player.Instance.jumpMultiplier = 99999f;
+            }
+        }
