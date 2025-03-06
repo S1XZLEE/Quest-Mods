@@ -1,0 +1,37 @@
+public static void EnableSteamLongArms()
+        {
+            GorillaLocomotion.Player.Instance.transform.localScale = new Vector3(armlength, armlength, armlength);
+        }
+
+        public static void DisableSteamLongArms()
+        {
+            GorillaLocomotion.Player.Instance.transform.localScale = new Vector3(1f, 1f, 1f);
+        }
+
+        public static void MultipliedLongArms()
+        {
+            GorillaLocomotion.Player.Instance.leftControllerTransform.transform.position = GorillaTagger.Instance.headCollider.transform.position - (GorillaTagger.Instance.headCollider.transform.position - GorillaTagger.Instance.leftHandTransform.position) * armlength;
+            GorillaLocomotion.Player.Instance.rightControllerTransform.transform.position = GorillaTagger.Instance.headCollider.transform.position - (GorillaTagger.Instance.headCollider.transform.position - GorillaTagger.Instance.rightHandTransform.position) * armlength;
+        }
+
+        public static void VerticalLongArms()
+        {
+            Vector3 lefty = GorillaTagger.Instance.headCollider.transform.position - GorillaTagger.Instance.leftHandTransform.position;
+            lefty.y *= armlength;
+            Vector3 righty = GorillaTagger.Instance.headCollider.transform.position - GorillaTagger.Instance.rightHandTransform.position;
+            righty.y *= armlength;
+            GorillaLocomotion.Player.Instance.leftControllerTransform.transform.position = GorillaTagger.Instance.headCollider.transform.position - lefty;
+            GorillaLocomotion.Player.Instance.rightControllerTransform.transform.position = GorillaTagger.Instance.headCollider.transform.position - righty;
+        }
+
+        public static void HorizontalLongArms()
+        {
+            Vector3 lefty = GorillaTagger.Instance.headCollider.transform.position - GorillaTagger.Instance.leftHandTransform.position;
+            lefty.x *= armlength;
+            lefty.z *= armlength;
+            Vector3 righty = GorillaTagger.Instance.headCollider.transform.position - GorillaTagger.Instance.rightHandTransform.position;
+            righty.x *= armlength;
+            righty.z *= armlength;
+            GorillaLocomotion.Player.Instance.leftControllerTransform.transform.position = GorillaTagger.Instance.headCollider.transform.position - lefty;
+            GorillaLocomotion.Player.Instance.rightControllerTransform.transform.position = GorillaTagger.Instance.headCollider.transform.position - righty;
+        }
