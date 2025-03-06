@@ -1,0 +1,11 @@
+ublic static void EnableFloatingRig()
+        {
+            offsetH = GorillaTagger.Instance.offlineVRRig.head.trackingPositionOffset;
+        }
+
+        public static void FloatingRig()
+        {
+            GorillaTagger.Instance.offlineVRRig.head.trackingPositionOffset = offsetH + new Vector3(0f, 0.65f + (Mathf.Sin((float)Time.frameCount / 40f) * 0.2f), 0f);
+        }
+
+        public static void DisableFloatingRig()
