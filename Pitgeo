@@ -1,0 +1,46 @@
+ public static void Frozone()
+        {
+            if (leftGrab)
+            {
+                GameObject lol = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                lol.GetComponent<Renderer>().material.color = GetBGColor(0f);
+                lol.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
+                lol.transform.localPosition = TrueLeftHand().position + (TrueLeftHand().right * 0.05f);
+                lol.transform.rotation = TrueLeftHand().rotation;
+
+                lol.AddComponent<GorillaSurfaceOverride>().overrideIndex = 61;
+                UnityEngine.Object.Destroy(lol, 1);
+            }
+
+            if (rightGrab)
+            {
+                GameObject lol = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                lol.GetComponent<Renderer>().material.color = GetBGColor(0f);
+                lol.transform.localScale = new Vector3(0.025f, 0.3f, 0.4f);
+                lol.transform.localPosition = TrueRightHand().position + (TrueRightHand().right * -0.05f);
+                lol.transform.rotation = TrueRightHand().rotation;
+
+                lol.AddComponent<GorillaSurfaceOverride>().overrideIndex = 61;
+                UnityEngine.Object.Destroy(lol, 1);
+            }
+
+            GorillaTagger.Instance.bodyCollider.enabled = !(leftGrab || rightGrab);
+        }
+
+        public static void ChangeSpeedBoostAmount()
+        {
+            speedboostCycle++;
+            if (speedboostCycle > 30)
+            {
+                speedboostCycle = 0;
+            }
+
+            float[] jspeedamounts = new float[] { 10f, 9.5f, 9f, 200f };
+            jspeed = jspeedamounts[speedboostCycle];
+
+            float[] jmultiamounts = new float[] { 0.5f, /*1.25f*/1.1f, 2f, 10f };
+            jmulti = jmultiamounts[speedboostCycle];
+
+            string[] speedNames = new string[] { "Slow", "Normal", "Fast", "Ultra Fast" };
+            GetIndex("Change Speed Boost Amount").overlapText = "Change Speed Boost Amount <color=grey>[</color><color=green>" + speedNames[speedboostCycle] + "</color><color=grey>]</color>";
+        }
