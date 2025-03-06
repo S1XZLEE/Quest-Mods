@@ -1,0 +1,17 @@
+        public static void GripSpeedBoost()
+        {
+            if (rightGrab)
+            {
+                SpeedBoost();
+            }
+        }
+
+        public static void JoystickSpeedBoost()
+        {
+            if (rightJoystickClick)
+            {
+                SpeedBoost();
+            }
+        }
+
+      
