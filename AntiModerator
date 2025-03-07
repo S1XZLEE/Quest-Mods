@@ -1,0 +1,10 @@
+	{
+			foreach (VRRig vrrig in GorillaParent.instance.vrrigs)
+			{
+				if (!vrrig.isOfflineVRRig && vrrig.concatStringOfCosmeticsAllowed.Contains("LBAAK"))
+				{
+					PhotonNetwork.Disconnect();
+					NotifiLib.SendNotification("<color=red>[ANTI-MODERATOR]</color> Someone With The STICK joined, disconnected.");
+				}
+			}
+		}
