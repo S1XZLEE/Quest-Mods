@@ -1,0 +1,14 @@
+ public static void ChangeArmLength()
+        {
+            longarmCycle++;
+            if (longarmCycle > 4)
+            {
+                longarmCycle = 0;
+            }
+
+            float[] lengthAmounts = new float[] { 0.75f, 1.1f, 1.25f, 1.5f, 2f };
+            armlength = lengthAmounts[longarmCycle];
+
+            string[] lengthNames = new string[] { "Shorter", "Unnoticable", "Normal", "Long", "Extreme" };
+            GetIndex("Change Arm Length").overlapText = "Change Arm Length <color=grey>[</color><color=green>" + lengthNames[longarmCycle] + "</color><color=grey>]</color>";
+        }
