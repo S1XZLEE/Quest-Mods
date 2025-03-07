@@ -1,0 +1,17 @@
+ public static void WallWalk()
+        {
+            if (GorillaLocomotion.Player.Instance.IsHandTouching(true) || GorillaLocomotion.Player.Instance.IsHandTouching(false))
+            {
+                FieldInfo fieldInfo = typeof(GorillaLocomotion.Player).GetField("lastHitInfoHand", BindingFlags.NonPublic | BindingFlags.Instance);
+                RaycastHit ray = (RaycastHit)fieldInfo.GetValue(GorillaLocomotion.Player.Instance);
+                walkPos = ray.point;
+                walkNormal = ray.normal;
+            }
+
+            if (walkPos != Vector3.zero && rightGrab)
+            {
+                //GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(walkNormal * -10, ForceMode.Acceleration);
+                GorillaLocomotion.Player.Instance.bodyCollider.attachedRigidbody.AddForce(walkNormal * -9.81f, ForceMode.Acceleration);
+                ZeroGravity();
+            }
+        }
