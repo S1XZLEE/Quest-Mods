@@ -1,0 +1,25 @@
+public static void MosaSpeed()
+		{
+			if (!Mods.oiwefkwenfjk)
+			{
+				foreach (GorillaSurfaceOverride gorillaSurfaceOverride in Resources.FindObjectsOfTypeAll<GorillaSurfaceOverride>())
+				{
+					if (Mods.speed == 0)
+					{
+						gorillaSurfaceOverride.extraVelMaxMultiplier = 1.2f;
+						gorillaSurfaceOverride.extraVelMultiplier = 1.7f;
+					}
+					else if (Mods.speed == 1)
+					{
+						gorillaSurfaceOverride.extraVelMaxMultiplier = 1.5f;
+						gorillaSurfaceOverride.extraVelMultiplier = 1.4f;
+					}
+					else if (Mods.speed == 2)
+					{
+						gorillaSurfaceOverride.extraVelMaxMultiplier = 10f;
+						gorillaSurfaceOverride.extraVelMultiplier = 10f;
+					}
+				}
+				Mods.oiwefkwenfjk = true;
+			}
+		}
