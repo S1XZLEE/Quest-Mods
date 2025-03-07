@@ -2,7 +2,7 @@
         {
             if (rightGrab)
             {
-                SpeedBoost();
+                SpeedBoost(6.7f);
             }
         }
 
@@ -10,7 +10,7 @@
         {
             if (rightJoystickClick)
             {
-                SpeedBoost();
+                SpeedBoost(2.6f);
             }
         }
 
