@@ -7,4 +7,4 @@ using System.Reflection;
 [assembly: AssemblyInformationalVersion(iiMenu.PluginInfo.Version)]
 [assembly: AssemblyProduct(iiMenu.PluginInfo.Name)]
 [assembly: AssemblyTitle(iiMenu.PluginInfo.Name)]
-[assembly: AssemblyVersion(iiMenu.PluginInfo.Version + ".0")]
+[assembly: AssemblyVersion(iiMenu.PluginInfo.Version + ".0")]  
